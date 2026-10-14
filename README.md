@@ -55,7 +55,7 @@ No Quiosque Paraíso, a foto informa o Instagram `@quiosqueparaiso`, mas não mo
 
 Configure o domínio definitivo na plataforma de hospedagem; nenhum domínio real está incluído. Gere um QR Code apontando para `https://SEU-DOMINIO/quiosque-paraiso`, `https://SEU-DOMINIO/quiosque-azul` ou `https://SEU-DOMINIO/hamburgueria-central`. Antes de imprimir, teste o QR Code em celular, inclusive abrindo a rota diretamente, sem navegar pela página inicial.
 
-O Vite gera arquivos estáticos em `dist/`, compatíveis com Cloudflare Pages e hospedagens equivalentes. Configure o comando de build como `npm run build` e a pasta de saída como `dist`. As rotas são tratadas pelo fallback SPA do Vite/Cloudflare Pages; em outra hospedagem, configure fallback de caminhos para `index.html`. Faça uma publicação de teste e valide cada URL direta antes de divulgar os QR Codes.
+O Vite gera arquivos estáticos em `dist/`, compatíveis com Vercel, Cloudflare Pages e hospedagens equivalentes. Configure o comando de build como `npm run build` e a pasta de saída como `dist`. O arquivo `vercel.json` encaminha as rotas de cardápio à aplicação. Em outra hospedagem, configure fallback de caminhos para `index.html`. Após publicar, valide cada URL direta antes de divulgar os QR Codes.
 
 Para atualizar o cardápio, modifique os dados/recursos, confira `npm run build` e publique uma nova versão. Faça backup versionando o projeto Git e mantendo cópia das imagens originais junto aos arquivos do projeto.
 
