@@ -1,6 +1,6 @@
 # Cardápio Digital
 
-Aplicação estática de cardápios para restaurantes, bares e quiosques. Os exemplos Quiosque Azul e Hamburgueria Central são fictícios, e todos os produtos e preços são demonstrativos. Não há backend, banco de dados, autenticação, painel nem carrinho.
+Aplicação estática de cardápios para restaurantes, bares e quiosques. Quiosque Azul e Hamburgueria Central são exemplos fictícios e estão identificados como demonstração. Quiosque Paraíso foi cadastrado a partir do cardápio enviado. Não há backend, banco de dados, autenticação, painel nem carrinho.
 
 ## Requisitos e execução
 
@@ -11,11 +11,11 @@ npm install
 npm run dev
 ```
 
-O Vite informará o endereço local. Abra `/quiosque-azul` ou `/hamburgueria-central`. Para gerar e conferir a versão de produção, use `npm run build` e `npm run preview`.
+O Vite informará o endereço local. Abra `/quiosque-paraiso`, `/quiosque-azul` ou `/hamburgueria-central`. Para gerar e conferir a versão de produção, use `npm run build` e `npm run preview`.
 
 ## Atualizar dados ou incluir cliente
 
-Edite `src/data/estabelecimentos.ts`. Cada estabelecimento deve ter um `id` único, que também será o caminho da URL (`/id`), nome, tema, contatos, categorias e produtos. O produto tem identificador estável, preço numérico em reais, categoria existente e `available` para indicar disponibilidade. Não altere a lógica dos componentes para mudar esses dados. Em desenvolvimento, erros de identificadores e referências inválidas aparecem no console.
+Edite `src/data/estabelecimentos.ts`. Cada estabelecimento deve ter um `id` único, que também será o caminho da URL (`/id`), nome, tema, contatos, categorias e produtos. O produto tem identificador estável, categoria existente e `available` para indicar disponibilidade. Use `price` para um valor numérico em reais ou `priceLabel` para preços sob consulta. Não altere a lógica dos componentes para mudar esses dados. Em desenvolvimento, erros de identificadores e referências inválidas aparecem no console.
 
 Para adicionar um cliente, copie um objeto, escolha um id que não exista e atualize nome, tagline, cores, contato, categorias e produtos. A moeda é formatada centralmente por `src/utils/formatarMoeda.ts`.
 
@@ -49,9 +49,11 @@ Coloque imagens locais em `public/images/<id-do-cliente>/`, por exemplo `public/
 
 Preencha `contact.whatsapp` com telefone brasileiro com DDD, com ou sem prefixo 55. O botão aparece somente quando o número é válido. Endereço, horário e Instagram são opcionais. Links externos abrem em nova aba com proteção `noopener noreferrer`.
 
+No Quiosque Paraíso, a foto informa o Instagram `@quiosqueparaiso`, mas não mostra telefone, endereço nem horário. Por isso, o botão do WhatsApp fica oculto até que o telefone seja fornecido.
+
 ## QR Code e publicação
 
-Configure o domínio definitivo na plataforma de hospedagem; nenhum domínio real está incluído. Gere um QR Code apontando para `https://SEU-DOMINIO/quiosque-azul` ou `https://SEU-DOMINIO/hamburgueria-central`. Antes de imprimir, teste o QR Code em celular, inclusive abrindo a rota diretamente, sem navegar pela página inicial.
+Configure o domínio definitivo na plataforma de hospedagem; nenhum domínio real está incluído. Gere um QR Code apontando para `https://SEU-DOMINIO/quiosque-paraiso`, `https://SEU-DOMINIO/quiosque-azul` ou `https://SEU-DOMINIO/hamburgueria-central`. Antes de imprimir, teste o QR Code em celular, inclusive abrindo a rota diretamente, sem navegar pela página inicial.
 
 O Vite gera arquivos estáticos em `dist/`, compatíveis com Cloudflare Pages e hospedagens equivalentes. Configure o comando de build como `npm run build` e a pasta de saída como `dist`. As rotas são tratadas pelo fallback SPA do Vite/Cloudflare Pages; em outra hospedagem, configure fallback de caminhos para `index.html`. Faça uma publicação de teste e valide cada URL direta antes de divulgar os QR Codes.
 

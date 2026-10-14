@@ -71,7 +71,9 @@ export function PaginaCardapio({
               </div>
             )}
             <span className="brand-caption">CARDÁPIO DIGITAL</span>
+          {establishment.demonstration && (
             <span className="demo-tag">EXEMPLO DEMONSTRATIVO</span>
+          )}
           </div>
           <div className="hero-copy">
             <p className="eyebrow">

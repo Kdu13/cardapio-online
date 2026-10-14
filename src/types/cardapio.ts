@@ -21,7 +21,10 @@ export interface Product {
   id: string;
   name: string;
   description?: string;
-  price: number;
+  /** Preço definido em reais; pode faltar quando o cardápio indica consulta. */
+  price?: number;
+  /** Texto exibido quando o preço não é informado, por exemplo "Preço sob consulta". */
+  priceLabel?: string;
   image?: string;
   categoryId: string;
   available: boolean;
@@ -30,6 +33,7 @@ export interface Establishment {
   id: string;
   name: string;
   tagline: string;
+  demonstration?: boolean;
   logo?: string;
   cover?: string;
   theme: Theme;

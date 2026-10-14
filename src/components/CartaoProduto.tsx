@@ -30,7 +30,9 @@ export function ProductCard({ product }: { product: Product }) {
         </div>
         {product.description && <p>{product.description}</p>}
         <strong className="product-price">
-          {formatCurrency(product.price)}
+          {typeof product.price === "number"
+            ? formatCurrency(product.price)
+            : product.priceLabel}
         </strong>
       </div>
     </article>
